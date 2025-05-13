@@ -1,76 +1,48 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 const Home = () => {
-  const navigate = useNavigate();
+  const containerStyle = {
+    padding: '4rem 2rem',
+    textAlign: 'center',
+    backgroundColor: '#f4f4f8',
+    minHeight: '80vh',
+  };
+
+  const titleStyle = {
+    fontSize: '2.5rem',
+    color: '#1e1e2f',
+    marginBottom: '1rem',
+  };
+
+  const descriptionStyle = {
+    fontSize: '1.2rem',
+    color: '#555',
+    marginBottom: '2rem',
+  };
+
+  const buttonStyle = {
+    padding: '0.75rem 1.5rem',
+    fontSize: '1rem',
+    backgroundColor: '#1e1e2f',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+    textDecoration: 'none',
+    cursor: 'pointer',
+  };
 
   return (
-    <div className="home-container">
-      <h1>Welcome to EventX</h1>
-      <p>Your all-in-one event management solution</p>
-
-      <div className="btn-group">
-        <button onClick={() => navigate('/client')} className="home-btn client-btn">
-          I'm a Client
-        </button>
-        <button onClick={() => navigate('/manager')} className="home-btn manager-btn">
-          I'm a Manager
-        </button>
-      </div>
-
-      {/* Inline Styling */}
-      <style>{`
-        .home-container {
-          text-align: center;
-          padding: 4rem 1rem;
-          background: linear-gradient(to right, #4facfe, #00f2fe);
-          color: white;
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-
-        .home-container h1 {
-          font-size: 3rem;
-          margin-bottom: 0.5rem;
-        }
-
-        .home-container p {
-          font-size: 1.2rem;
-          margin-bottom: 2rem;
-        }
-
-        .btn-group {
-          display: flex;
-          justify-content: center;
-          gap: 2rem;
-          flex-wrap: wrap;
-        }
-
-        .home-btn {
-          padding: 0.8rem 2rem;
-          font-size: 1.1rem;
-          border: none;
-          border-radius: 30px;
-          cursor: pointer;
-          transition: transform 0.3s ease, background 0.3s;
-        }
-
-        .client-btn {
-          background-color: #ff7675;
-          color: white;
-        }
-
-        .manager-btn {
-          background-color: #55efc4;
-          color: #2d3436;
-        }
-
-        .home-btn:hover {
-          transform: scale(1.05);
-          opacity: 0.9;
-        }
-      `}</style>
+    <div style={containerStyle}>
+      <h1 style={titleStyle}>Welcome to EventHorizon</h1>
+      <p style={descriptionStyle}>
+        Discover, manage, and attend the best tech, design, and business events around the globe. We bring communities together to learn, network, and grow.
+      </p>
+      <Link to="/events" style={buttonStyle}>
+        View Upcoming Events
+      </Link>
     </div>
   );
 };
 
-export default Home;
+export default Home;
